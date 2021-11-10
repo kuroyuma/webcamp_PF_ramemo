@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image_id: MyString
+  shop_name: MyString
+  food_name: MyString
+  genre: 1
+  price: 1
+  introduction: MyString
+  prefecture: 1
+
+two:
+  image_id: MyString
+  shop_name: MyString
+  food_name: MyString
+  genre: 1
+  price: 1
+  introduction: MyString
+  prefecture: 1

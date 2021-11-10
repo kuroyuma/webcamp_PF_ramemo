@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_10_050049) do
+ActiveRecord::Schema.define(version: 2021_11_10_113725) do
+
+  create_table "posts", force: :cascade do |t|
+    t.string "image_id"
+    t.string "shop_name"
+    t.string "food_name"
+    t.integer "genre"
+    t.integer "price"
+    t.string "introduction"
+    t.integer "prefecture"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

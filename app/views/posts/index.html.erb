@@ -1,0 +1,18 @@
+<% @posts.each do |post| %>
+<div>
+  <p>画像</p>
+  <%= attachment_image_tag post, :image %>
+　<p>ショップ名</p>
+　<%= post.shop_name %>
+　<p>ラーメン名</p>
+　<%= post.food_name %>
+　<p>ジャンル名</p>
+　<%= post.genre %>
+　<p>値段</p>
+　<%= post.price %>
+　<p>説明</p>
+　<%= post.introduction %>
+  <p>都道府県</p>
+  <%= post.prefecture %>
+</div>
+<% end %>
