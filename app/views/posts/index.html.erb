@@ -1,20 +1,22 @@
-<% @posts.each do |post| %>
-<div>
-  <p>画像</p>
-  <%= link_to post_path(post) do %>
-    <%= attachment_image_tag post, :image, :fill,200,200 %>
+<div class = 'conteiner'>
+  <div class = 'row'>
+  <% @posts.each do |post| %>
+  <div class = 'col'>
+    <div class = 'row'>
+    <%= link_to post_path(post) do %>
+      <%= attachment_image_tag post, :image, :fill,200,200 %>
+    <% end %>
+    </div>
+    <div class = 'row'>
+　  <%= post.shop_name %><!--店名-->
+　  </div>
+　  <div class = 'row'>
+　  <%= post.food_name %><!--商品名-->
+　  </div>
+　  <div class = 'row'>
+    <%= post.prefecture %><!--都道府県-->
+    </div>
+  </div>
   <% end %>
-　<p>ショップ名</p>
-　<%= post.shop_name %>
-　<p>ラーメン名</p>
-　<%= post.food_name %>
-　<p>ジャンル名</p>
-　<%= post.genre %>
-　<p>値段</p>
-　<%= post.price %>
-　<p>説明</p>
-　<%= post.introduction %>
-  <p>都道府県</p>
-  <%= post.prefecture %>
+  </div>
 </div>
-<% end %>

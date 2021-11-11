@@ -1,14 +1,36 @@
-<p>画像</p>
-<%= attachment_image_tag @post, :image, :fill,200,200 %>
-<p>ショップ名</p>
-<%= @post.shop_name %>
-<p>ラーメン名</p>
-<%= @post.food_name %>
-<p>ジャンル名</p>
-<%= @post.genre %>
-<p>値段</p>
-<%= @post.price %>
-<p>説明</p>
-<%= @post.introduction %>
-<p>都道府県</p>
-<%= @post.prefecture %>
+<div class='conteiner'>
+  <div class='row'>
+    <div class='col-4 text_center'>
+      <%= attachment_image_tag @post, :image, :fill,200,200 %>
+    </div>
+    <div class='col-6 '>
+      <table class="table table-borderless">
+        <tr>
+          <th>ショップ名</th>
+          <td><%= @post.shop_name %></td>
+        </tr>
+        <tr>
+          <th>ラーメン名</th>
+          <td><%= @post.food_name %></td>
+        </tr>
+        <tr>
+          <th>ジャンル名</th>
+          <td><%= @post.genre %></td>
+        </tr>
+        <tr>
+          <th>値段</th>
+          <td><%= @post.price %></td>
+        </tr>
+        <tr>
+          <th>説明</th>
+          <td><%= @post.introduction %></td>
+        </tr>
+        <tr>
+          <th>都道府県</th>
+          <td><%= @post.prefecture %></td>
+        </tr>
+      </table>
+    </div>
+    <%= link_to '編集', edit_post_path %> 
+  </div>
+</div>
