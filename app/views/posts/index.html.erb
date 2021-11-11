@@ -1,22 +1,22 @@
 <div class = 'conteiner'>
   <div class = 'row'>
-  <% @posts.each do |post| %>
-  <div class = 'col'>
-    <div class = 'row'>
-    <%= link_to post_path(post) do %>
-      <%= attachment_image_tag post, :image, :fill,200,200 %>
+    <% @posts.each do |post| %>
+    <div class = 'col'>
+      <div class="card" style="width:250px;">
+        <img class="card-img-top">
+        <%= link_to post_path(post) do %>
+          <%= attachment_image_tag post, :image, size: "250x250", class: "img-thumbnail" %>
+        <% end %>
+        </img>
+        <h4 class="card-title">
+　        <%= post.prefecture %></br><!--都道府県-->
+        </h4>
+        <div class="card-body">
+          <%= post.shop_name %></br><!--店名-->
+          <%= post.food_name %></br><!--商品名-->
+        </div>
+      </div>
+    </div>
     <% end %>
-    </div>
-    <div class = 'row'>
-　  <%= post.shop_name %><!--店名-->
-　  </div>
-　  <div class = 'row'>
-　  <%= post.food_name %><!--商品名-->
-　  </div>
-　  <div class = 'row'>
-    <%= post.prefecture %><!--都道府県-->
-    </div>
-  </div>
-  <% end %>
   </div>
 </div>
