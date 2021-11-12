@@ -7,7 +7,7 @@
       <table class="table table-borderless">
         <tr>
           <th>投稿者</th>
-          <td><%= @user.name %></td>
+          <td><%= link_to user_path(@user) do %><%= @user.name %><% end %></td>
         </tr>
         <tr>
         <tr>
@@ -24,7 +24,7 @@
         </tr>
         <tr>
           <th>値段</th>
-          <td><%= @post.price %></td>
+          <td><%= @post.price.to_s(:delimited) %>円</td>
         </tr>
         <tr>
           <th>説明</th>
@@ -35,8 +35,10 @@
           <td><%= @post.prefecture %></td>
         </tr>
       </table>
+      <%= link_to '編集', edit_post_path, class: "btn btn-warning" %>
+      <%= link_to "削除", post_path(@post), method: :delete, class: "btn btn-danger ml-5" %>
     </div>
-    <%= link_to '編集', edit_post_path %>
-    <%= link_to "削除", post_path(@post), method: :delete %>
+
+
   </div>
 </div>

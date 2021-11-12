@@ -8,12 +8,19 @@
           <%= attachment_image_tag post, :image, :fill,250,250, class: "img-thumbnail" %>
         <% end %>
         </img>
-        <h4 class="card-title">
-　        <%= post.prefecture %></br><!--都道府県-->
-        </h4>
-        <div class="card-body">
-          <%= post.shop_name %></br><!--店名-->
-          <%= post.food_name %></br><!--商品名-->
+        <div class="row">
+          <div class="col-2">
+            <%= attachment_image_tag post.user, :profile_image, :fill,50,50, class: "mt-5 ml-2 rounded-circle" %>
+          </div>
+          <div class="col-10">
+            <h5 class="card-title">
+　            <%= post.prefecture %></br><!--都道府県-->
+            </h5>
+            <div class="card-body">
+              <%= post.shop_name %></br><!--店名-->
+              <%= post.food_name %></br><!--商品名-->
+            </div>
+          </div>
         </div>
       </div>
     </div>
