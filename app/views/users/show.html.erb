@@ -1,9 +1,9 @@
 <div class='conteiner'>
-  <div class='row'>
-    <div class='col-4 text_center'>
+  <div class='row mx-auto mt-5'>
+    <div class='col-3'>
       <%= attachment_image_tag @user, :profile_image, :fill,250,250, class: "img-thumbnail" %>
     </div>
-    <div class='col-6 '>
+    <div class='col-9 '>
       <table class="table table-borderless">
         <tr>
           <th>ユーザー名</th>
@@ -22,7 +22,29 @@
           <td><%= @user.self_introduction %></td>
         </tr>
       </table>
+      <%= link_to '編集', edit_user_path %>
     </div>
-    <%= link_to '編集', edit_user_path %>
+  </div>
+</div>
+<div class = 'conteiner'>
+  <div class = 'row'>
+    <% @posts.each do |post| %>
+    <div class = 'col'>
+      <div class="card mx-auto mt-5" style="width:250px;">
+        <img class="card-img-top">
+        <%= link_to post_path(post) do %>
+          <%= attachment_image_tag post, :image, :fill,250,250, class: "img-thumbnail" %>
+        <% end %>
+        </img>
+        <h4 class="card-title">
+　        <%= post.prefecture %></br><!--都道府県-->
+        </h4>
+        <div class="card-body">
+          <%= post.shop_name %></br><!--店名-->
+          <%= post.food_name %></br><!--商品名-->
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>

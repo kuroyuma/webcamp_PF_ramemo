@@ -1,10 +1,15 @@
 <div class='conteiner'>
-  <div class='row'>
+  <div class='row mx-auto mt-5'>
     <div class='col-4 text_center'>
       <%= attachment_image_tag @post, :image, :fill,250,250, class: "img-thumbnail" %>
     </div>
     <div class='col-6 '>
       <table class="table table-borderless">
+        <tr>
+          <th>投稿者</th>
+          <td><%= @user.name %></td>
+        </tr>
+        <tr>
         <tr>
           <th>ショップ名</th>
           <td><%= @post.shop_name %></td>
