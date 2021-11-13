@@ -13,12 +13,21 @@
             <%= attachment_image_tag post.user, :profile_image, :fill,50,50, class: "mt-5 ml-2 rounded-circle" %>
           </div>
           <div class="col-10">
-            <h5 class="card-title">
-　            <%= post.prefecture %></br><!--都道府県-->
-            </h5>
-            <div class="card-body">
+            <div class="card-body py-0">
+              <h5><%= post.prefecture %></h5>
+              <%= post.user.name %></br>
               <%= post.shop_name %></br><!--店名-->
               <%= post.food_name %></br><!--商品名-->
+              ☞ <%= post.post_comments.count %>コメント</br>
+              <% if post.favorited_by?(current_user) %>
+                <%= link_to post_favorites_path(post), method: :delete do %>
+                ♥ <%= post.favorites.count %>いいね
+              <% end %>
+              <% else %>
+                  <%= link_to post_favorites_path(post), method: :post do %>
+                  ♡ <%= post.favorites.count %>いいね
+              <% end %>
+              <% end %>
             </div>
           </div>
         </div>

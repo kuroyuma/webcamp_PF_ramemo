@@ -3,6 +3,11 @@ class Post < ApplicationRecord
   belongs_to :user
   attachment :image
   has_many :post_comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 
   enum genre: {
     醤油:1,味噌:2,豚骨:3,塩:4,坦々麺:5,魚介系:6,つけ麺:7,タンメン:8,その他:9
