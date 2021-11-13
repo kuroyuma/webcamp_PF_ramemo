@@ -15,7 +15,7 @@
       <div class="container">
         <div class="navbar-brand p-3" >
           <% if user_signed_in? %>
-            <%= link_to "投稿一覧", posts_path, class: 'nav-link text-light' %>
+            <%= link_to "投稿一覧", posts_path, class: 'nav-link text-light fas fa-camera-retro' %>
           <% else %>
             <%= link_to "Home", root_path, class: 'nav-link text-light' %>
           <% end %>
@@ -30,7 +30,7 @@
                 <%= link_to "新規投稿", new_post_path, class: 'nav-link text-light fas fa-plus-circle' %>
               </li>
               <li class="nav-item">
-                <%= link_to "投稿一覧", posts_path, class: 'nav-link text-light fas fa-camera-retro' %>
+                <%= link_to "ラーメンバー", users_path, class: 'nav-link text-light fas fa-handshake' %>
               </li>
               <li class="nav-item">
                 <%= link_to 'マイページ', user_path(current_user.id), class: 'nav-link text-light fas fa-user-astronaut' %>
