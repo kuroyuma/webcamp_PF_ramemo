@@ -1,13 +1,13 @@
-<div class='conteiner'>
+<div class="container">
   <div class='row mx-auto mt-5'>
-    <div class='col-3'>
+    <div class='col-md-3'>
       <%= attachment_image_tag @user, :profile_image, :fill,250,250, class: "img-thumbnail" %>
     </div>
     <div class='col-9 '>
       <table class="table table-borderless">
         <tr>
-          <th>ユーザー名</th>
-          <td><%= @user.name %></td>
+          <th class='col-md-3'>ユーザー名</th>
+          <td class='col-md-9'><%= @user.name %></td>
         </tr>
         <tr>
           <th>私の一推し</th>
@@ -33,11 +33,11 @@
             <% end %>
           </td>
         </tr>
-        <tr>
-          <td><%=link_to "フォロー", follows_user_path(@user.id) %><%= @user.followings.count %>人</td>
-          <td><%=link_to "フォロワー", followers_user_path(@user.id) %><%= @user.followers.count %>人</td>
-        </tr>
+
       </table>
+          <%=link_to "フォロー", follows_user_path(@user.id) %><%= @user.followings.count %>人
+          <%=link_to "フォロワー", followers_user_path(@user.id) %><%= @user.followers.count %>人
+
       <% if @user == current_user %>
       <%= link_to '編集', edit_user_path, class: "fas fa-user-edit btn btn-warning" %>
       <% end %>
