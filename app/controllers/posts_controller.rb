@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order(created_at: :desc)
+    pp @posts
   end
 
   def show
@@ -43,6 +44,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:image, :shop_name, :food_name, :genre, :price, :introduction, :prefecture, :user_id, )
+    params.require(:post).permit(:image, :shop_name, :food_name, :genre, :price, :introduction, :prefecture, :user_id, :evaluation )
   end
 end

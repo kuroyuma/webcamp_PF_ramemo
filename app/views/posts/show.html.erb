@@ -37,6 +37,10 @@
           <td><%= @post.price.to_s(:delimited) %>円</td>
         </tr>
         <tr>
+          <th>評価</th>
+          <td class="movie-evaluation" data-score="<%= @post.evaluation %>"></td>
+        </tr>
+        <tr>
           <th>説明</th>
           <td><%= @post.introduction %></td>
         </tr>
@@ -45,6 +49,15 @@
           <td><%= @post.prefecture %></td>
         </tr>
       </table>
+      <script>
+        $('.movie-evaluation').raty({
+          readOnly: true,
+          score: function() {
+            return $(this).attr('data-score');
+          },
+          path: '/assets/'
+        });
+      </script>
       <% if @post.user == current_user %>
         <%= link_to '編集', edit_post_path, class: "btn btn-warning" %>
         <%= link_to "削除", post_path(@post), method: :delete, class: "btn btn-danger ml-5" %>

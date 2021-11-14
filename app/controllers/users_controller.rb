@@ -3,9 +3,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts
   end
-  
+
   def index
     @users = User.all
+    pp @users
   end
 
   def edit
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
     @user.update(user_params)
     redirect_to user_path
   end
-  
+
   def follows
     user = User.find(params[:id])
     @users = user.followings
