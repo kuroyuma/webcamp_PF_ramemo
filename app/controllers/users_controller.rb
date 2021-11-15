@@ -6,12 +6,11 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    pp @users
   end
 
   def edit
     @user = User.find(params[:id])
-    if @user == current_user
+    if @user == current_user  ##他人のプロフィールを編集できないように
       render "edit"
     else
       redirect_to posts_path

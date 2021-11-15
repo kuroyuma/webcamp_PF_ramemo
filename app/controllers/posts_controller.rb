@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order(created_at: :desc)
-    pp @posts
+    pp @posts #投稿確認のため記載
   end
 
   def show
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if @post.user == current_user
+    if @post.user == current_user  #他人の投稿を編集できないように
       render "edit"
     else
       redirect_to posts_path
