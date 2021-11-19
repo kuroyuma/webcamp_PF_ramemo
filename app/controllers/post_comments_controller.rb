@@ -1,19 +1,20 @@
 class PostCommentsController < ApplicationController
 
   def create
-    post = Post.find(params[:post_id])
+    @post = Post.find(params[:post_id])
 
-    comment = current_user.post_comments.new(post_comment_params)
+    @comment = current_user.post_comments.new(post_comment_params)
     #上記はこの2行と同じcomment = PostComment.new(post_comment_params)
     # 　　　　　　　　　comment.user_id = current_user.id
-    comment.post_id = post.id
-    comment.save
-    redirect_to post_path(post)
+    @comment.post_id = @post.id
+    @comment.save
   end
 
   def destroy
-    PostComment.find_by(id: params[:id]).destroy
-    redirect_to post_path(params[:post_id])
+    @post = Post.find(params[:post_id])
+    post_comment = @post.post_comments.find(params[:id])
+    post_comment.destroy
+    # PostComment.find_by(id: params[:id]).destroy
   end
 
   private

@@ -1,7 +1,7 @@
 <% if post.user != current_user %> <!-- @post → post -->
 <div class='row mt-5'>
   <div class="col-5">
-    <%= form_with(model:[post, post_comment], local: true) do |f| %> <!-- @post → post. @post_comment→post_comment -->
+    <%= form_with model:[post, post_comment] do |f| %> <!-- @post → post. @post_comment→post_comment -->
     <%= f.text_area :comment, placeholder: "コメントフォーム" %>
   </div>
   <div class="col-2">
