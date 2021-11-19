@@ -44,6 +44,11 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def search
+    @posts = Post.search(params[:prefecture])
+    render "index"
+  end
+
   def post_params
     params.require(:post).permit(:image, :shop_name, :food_name, :genre, :price, :introduction, :prefecture, :user_id, :evaluation )
   end

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'home/about' => 'homes#about'
   get 'rank/favorite' => 'ranks#favorite'
   get 'rank/ate' => 'ranks#ate'
+  get 'search' => 'posts#search'
 
   resources :posts do
     resource :favorites, only: [:create, :destroy]
