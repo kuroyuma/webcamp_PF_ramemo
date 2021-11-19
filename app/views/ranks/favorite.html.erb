@@ -1,48 +1,46 @@
 <div class="container">
-<h1>人気らーめんランキング</h1>
-<div class ='row'>
-<!--同率順位表示-->
-<% last_like = 0 %>
-<% j = 1 %>
-<% @post_favorite_ranks.each.with_index(1) do |rank, i| %>
-<div class = 'col col-xl-3 col-lg-4 col-md-6' style="width:250px;">
-  <!--最初の値をlast_likeに保存-->
-  <% if i == 1 %>
-    <% last_like = rank.favorites.count %>
-  <% end %>
-  <!--last_likeといいね数比べて同じなら同じ順位、違うなら次の順位表示-->
-  <% if rank.favorites.count != last_like %>
-    <% j = i %>
-    第<%= j %>位
-　　<!--<= link_to user_path(rank.user_id) do %>-->
-　　<%= link_to user_path(rank.user_id) do %>
-    <p><%= rank.user.name %></p>
-    <!--<% end %>-->
-       <!--投稿画像-->
-       <div>
+  <h1>人気らーめんランキング</h1>
+  <div class ='row'>
+    <!--同率順位表示-->
+    <% last_like = 0 %>
+    <% j = 1 %>
+    <% @post_favorite_ranks.each.with_index(1) do |rank, i| %>
+      <div class = 'col col-xl-3 col-lg-4 col-md-6' style="width:250px;">
+      <!--最初の値をlast_likeに保存-->
+      <% if i == 1 %>
+        <% last_like = rank.favorites.count %>
+      <% end %>
+      <!--last_likeといいね数比べて同じなら同じ順位、違うなら次の順位表示-->
+      <% if rank.favorites.count != last_like %>
+        <% j = i %>
+        第<%= j %>位
+　　    <!--<= link_to user_path(rank.user_id) do %>-->
+　　    <%= link_to user_path(rank.user_id) do %>
+          <p><%= rank.user.name %></p>
+        <% end %>
+        <!--投稿画像-->
+        <div>
+        <%= link_to post_path(rank) do %>
+          <%= attachment_image_tag rank, :image, :fill,250,250, class: "img-thumbnail", fallback: "no_image.jpg" %>
+        <% end %>
+        </div>
+        <p>♥<%= rank.favorites.count %>いいね</p>
+        <% last_like = rank.favorites.count %>
+      <% else %>
+        <% last_like = rank.favorites.count %>
+        第<%= j %>位
+        <%= link_to user_path(rank.user_id) do %>
+          <p><%= rank.user.name %></p>
+        <% end %>
+        <!--投稿画像-->
+        <div>
         <%= link_to post_path(rank) do %>
         <%= attachment_image_tag rank, :image, :fill,250,250, class: "img-thumbnail", fallback: "no_image.jpg" %>
         <% end %>
-       </div>
-
-    <p>♥<%= rank.favorites.count %>いいね</p>
-    <% last_like = rank.favorites.count %>
-  <% else %>
-    <% last_like = rank.favorites.count %>
-    第<%= j %>位
-
-    <%= link_to user_path(rank.user_id) do %>
-    <p><%= rank.user.name %></p>
+        </div>
+        <p>♥<%= rank.favorites.count %>いいね</p>
+      <% end %>
+      </div>
     <% end %>
-       <!--投稿画像-->
-       <div>
-        <%= link_to post_path(rank) do %>
-        <%= attachment_image_tag rank, :image, :fill,250,250, class: "img-thumbnail", fallback: "no_image.jpg" %>
-        <% end %>
-       </div>
-    <p>♥<%= rank.favorites.count %>いいね</p>
-  <% end %>
   </div>
-<% end %>
-</div>
 </div>

@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @post = Post.new
     @posts = Post.all.order(created_at: :desc)
     pp @posts #投稿確認のため記載
   end
