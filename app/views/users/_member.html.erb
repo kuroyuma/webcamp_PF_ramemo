@@ -15,8 +15,8 @@
         <tr>
           <td><%= attachment_image_tag user, :profile_image, :fill,40,40, class: "p-0 rounded-circle" %></td>
           <td><%= link_to user_path(user) do %><%= user.name %><% end %></td>
-          <td><%= user.followings.count %>フォロー</td>
-          <td><%= user.followers.count %>フォロワー</td>
+          <td class="follow_count_<%= user.id %>"><%=link_to "フォロー", follows_user_path(user.id) %><%= user.followings.count %>人</td>
+          <td class="followers_count_<%= user.id %>"><%=link_to "フォロワー", followers_user_path(user.id) %><%= user.followers.count %>人</td>
           <td id="user_<%= user.id %>">
             <div class="relationship"> <%= render 'relationships/relationship', user: user %></div>
           </td>

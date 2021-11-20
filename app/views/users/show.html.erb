@@ -28,8 +28,8 @@
           </td>
         </tr>
       </table>
-      <div class="follow_count"><%=link_to "フォロー", follows_user_path(@user.id) %><%= @user.followings.count %>人</div>
-      <div class="followers_count"><%=link_to "フォロワー", followers_user_path(@user.id) %><%= @user.followers.count %>人</div>
+      <div class="follow_count_<%= @user.id %>"><%=link_to "フォロー", follows_user_path(@user.id) %><%= @user.followings.count %>人</div>
+      <div class="followers_count_<%= @user.id %>"><%=link_to "フォロワー", followers_user_path(@user.id) %><%= @user.followers.count %>人</div>
       <% if @user == current_user %>
         <%= link_to '編集', edit_user_path, class: "fas fa-user-edit btn btn-warning" %>
       <% end %>
