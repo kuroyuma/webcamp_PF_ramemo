@@ -18,7 +18,7 @@
           <td><%= user.followings.count %>フォロー</td>
           <td><%= user.followers.count %>フォロワー</td>
           <td id="user_<%= user.id %>">
-            <%= render 'relationships/relationship', user: user %>
+            <div class="relationship"> <%= render 'relationships/relationship', user: user %></div>
           </td>
         </tr>
       </tbody>
