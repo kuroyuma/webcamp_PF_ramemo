@@ -17,7 +17,7 @@
           <td><%= link_to user_path(user) do %><%= user.name %><% end %></td>
           <td><%= user.followings.count %>フォロー</td>
           <td><%= user.followers.count %>フォロワー</td>
-          <td class="relationships">
+          <td id="user_<%= user.id %>">
             <%= render 'relationships/relationship', user: user %>
           </td>
         </tr>

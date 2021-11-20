@@ -59,18 +59,16 @@
 </div>
 <div class="container">
   <% if @post.user != current_user %> <!-- @post → post -->
-<div class='row mt-5' >
-  <div class="col-5">
-    <%= form_with model:[@post, @post_comment] do |f| %> <!-- @post → post. @post_comment→post_comment -->
-    <%= f.text_area :comment, placeholder: "コメントフォーム" %>
-  </div>
-  <div class="col-2">
-      <%= f.submit "送信", class: "btn btn-warning btn-sm" %>
-    <% end %>
-  </div>
-</div>
-<% end %>
-<div class="post_comments">
-  <%= render "post_comments/index", post: @post %>
+    <div class='row mt-5' >
+      <div class="col-5">
+        <%= form_with model:[@post, @post_comment] do |f| %> <!-- @post → post. @post_comment→post_comment -->
+          <%= f.text_area :comment, placeholder: "コメントフォーム" %>
+          <%= f.submit "送信", class: "btn btn-warning btn-sm" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <div class="post_comments">
+    <%= render "post_comments/index", post: @post %>
   </div>
 </div>
