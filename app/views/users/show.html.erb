@@ -3,11 +3,11 @@
     <div class='col-md-3'>
       <%= attachment_image_tag @user, :profile_image, :fill,250,250, class: "img-thumbnail", fallback: "no_image.jpg" %>
     </div>
-    <div class='col-9 '>
+    <div class='col-md-9 '>
       <table class="table table-borderless">
         <tr>
-          <th class='col-md-3'>ユーザー名</th>
-          <td class='col-md-9'><%= @user.name %></td>
+          <th>ユーザー名</th>
+          <td><%= @user.name %></td>
         </tr>
         <tr>
           <th>私の一推し</th>
