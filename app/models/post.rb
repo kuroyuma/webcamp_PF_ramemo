@@ -5,6 +5,15 @@ class Post < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+  validates :image, presence: true
+  validates :shop_name, presence: true
+  validates :food_name, presence: true
+  validates :genre, presence: true
+  validates :price, presence: true
+  validates :introduction, presence: true
+  validates :prefecture, presence: true
+  validates :evaluation, presence: true
+
   def self.search(prefecture)
     where(["prefecture like?", "#{prefecture}"])
   end

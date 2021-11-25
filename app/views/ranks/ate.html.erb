@@ -10,7 +10,7 @@
       <% if i == 1 %>
         <% last_like = rank.posts.count %>
       <% end %>
-      <!--last_likeといいね数比べて同じなら同じ順位、違うなら次の順位表示-->
+      <!--last_likeと投稿と数比べて同じなら同じ順位、違うなら次の順位表示-->
       <% if rank.posts.count != last_like %>
         <% j = i %>
         第<%= j %>位
@@ -27,7 +27,7 @@
         <% last_like = rank.posts.count %>
         第<%= j %>位
         <p><%= rank.name %></p>
-        <!--投稿画像-->
+        <!--ユーザー画像-->
         <div>
           <%= link_to user_path(rank) do %>
             <%= attachment_image_tag rank, :profile_image, :fill,250,250, class: "img-thumbnail", fallback: "no_image.jpg" %>
