@@ -1,5 +1,4 @@
 class RelationshipsController < ApplicationController
-
   def create
     @user = User.find(params[:user_id])
     follow = current_user.active_relationships.build(follower_id: params[:user_id])
@@ -13,5 +12,4 @@ class RelationshipsController < ApplicationController
     follow.destroy
     # redirect_to users_path
   end
-
 end

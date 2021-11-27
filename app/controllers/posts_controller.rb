@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def new
     @post = Post.new
   end
@@ -17,7 +16,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @posts = Post.all.order(created_at: :desc)
-    pp @posts #投稿確認のため記載
+    pp @posts # 投稿確認のため記載
   end
 
   def show
@@ -28,8 +27,8 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if @post.user == current_user  #他人の投稿を編集できないように
-      render "edit"
+    if @post.user == current_user  # 他人の投稿を編集できないように
+      render 'edit'
     else
       redirect_to posts_path
     end
@@ -49,10 +48,11 @@ class PostsController < ApplicationController
 
   def search
     @posts = Post.search(params[:prefecture])
-    render "index"
+    render 'index'
   end
 
   def post_params
-    params.require(:post).permit(:image, :shop_name, :food_name, :genre, :price, :introduction, :prefecture, :user_id, :evaluation )
+    params.require(:post).permit(:image, :shop_name, :food_name, :genre, :price, :introduction, :prefecture, :user_id,
+                                 :evaluation)
   end
 end

@@ -10,8 +10,8 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    if @user == current_user  ##他人のプロフィールを編集できないように
-      render "edit"
+    if @user == current_user  # #他人のプロフィールを編集できないように
+      render 'edit'
     else
       redirect_to posts_path
     end
@@ -34,6 +34,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:profile_image, :name, :recommend, :amount_eaten, :self_introduction, )
+    params.require(:user).permit(:profile_image, :name, :recommend, :amount_eaten, :self_introduction)
   end
 end
