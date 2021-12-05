@@ -15,12 +15,10 @@
 ### 主な利用シーン
 自分自身がラーメンのメモをする時。他の会員投稿から地元から離れたラーメン屋を探す時。
 
-## テーブル定義書
-<https://docs.google.com/spreadsheets/d/1EhIhtZI4Jas9NTH0RDLhQVVOK9BFag3ZjDx8mUUzDZ4/edit?usp=sharing>
-## ER図
-<https://drive.google.com/file/d/19VkIp0U4BxlJK4D16PTuJG8eEm4f3Lw-/view?usp=sharing>
-## チャレンジ要素一覧
-<https://docs.google.com/spreadsheets/d/1G12MkPGr1yndyM6NhhoUOYVOYFrgp4RRWtn7KgVXdBs/edit?usp=sharing>
+## 設計書
+テーブル定義書：<https://docs.google.com/spreadsheets/d/1EhIhtZI4Jas9NTH0RDLhQVVOK9BFag3ZjDx8mUUzDZ4/edit?usp=sharing>
+ER図：<https://drive.google.com/file/d/19VkIp0U4BxlJK4D16PTuJG8eEm4f3Lw-/view?usp=sharing>
+チャレンジ要素一覧：<https://docs.google.com/spreadsheets/d/1G12MkPGr1yndyM6NhhoUOYVOYFrgp4RRWtn7KgVXdBs/edit?usp=sharing>
 
 ## 開発環境
 - OS：Linux(CentOS)
