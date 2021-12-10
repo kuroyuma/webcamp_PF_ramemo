@@ -15,9 +15,9 @@
           <div class="col-10">
             <div class="card-body py-0" id="post_<%= post.id %>">
               <h5><%= post.prefecture %></h5>
-              <%= post.shop_name %></br>
-              <%= post.food_name %></br>
-              ☞ <%= post.post_comments.count %>コメント</br>
+              <%= post.shop_name %><br>
+              <%= post.food_name %><br>
+              ☞ <%= post.post_comments.count %>コメント<br>
               <div class="favorite"><%= render 'favorites/favorite', post: post %></div>
             </div>
           </div>
