@@ -82,4 +82,6 @@ gem 'rubocop-rails', require:false
 gem 'rubocop-performance', require:false
 
 gem 'rspec-rails'
+
+gem 'rails-i18n'
  

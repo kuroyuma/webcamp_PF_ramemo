@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      post:
+    attributes:
+      post:
+        image: 写真
+    　　shop_name: 店名
+    　　food_name: ラーメン名
+    　　genre: ジャンル
+    　　price: 値段
+    　　introduction: 説明
+    　　prefecture: 都道府県
+    　　evaluation: 評価
+
