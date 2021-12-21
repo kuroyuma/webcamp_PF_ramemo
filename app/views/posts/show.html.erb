@@ -61,6 +61,9 @@
   </div>
 </div>
 <div class="container">
+  <div class="post_comments">
+    <%= render "post_comments/index", post: @post %>
+  </div>
   <% if @post.user != current_user %> <!-- @post → post -->
     <div class='row mt-5' >
       <div class="col-5">
@@ -71,7 +74,4 @@
       </div>
     </div>
   <% end %>
-  <div class="post_comments">
-    <%= render "post_comments/index", post: @post %>
-  </div>
 </div>
